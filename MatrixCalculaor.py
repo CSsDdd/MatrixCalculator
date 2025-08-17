@@ -27,16 +27,13 @@ def simplify(original_row,target_row,magnification):
         result_row.append(target_row[i]-original_row[i]*magnification)
     return result_row
 
-def main():
-    Matrix=[]
+def main(Matrix,m_Of_Matrix,n_Of_Matrix):
     pivot_element_column_pos=[]#pivot_element_column_pos[0]=0代表 第一行中主元在第一列
-    m_Of_Matrix=int(input("enter m of the matrix"))
-    n_Of_Matrix=int(input("enter n of the matrix"))
     print(m_Of_Matrix,n_Of_Matrix)
-    for i in range(0,m_Of_Matrix,1):
-        Matrix.append([])
-        for j in range(0,n_Of_Matrix,1):
-            Matrix[i].append(float(input()))
+    #for i in range(0,m_Of_Matrix,1):
+    #    Matrix.append([])
+    #    for j in range(0,n_Of_Matrix,1):
+    #        Matrix[i].append(float(input()))
 
     non_pivot_element_column_count=0
     display(Matrix)
@@ -72,5 +69,5 @@ def main():
             Matrix[j]=simplify(Matrix[i],Matrix[j],magnification=magnification)
         i=i-1
     display(Matrix)
-main()
+    return Matrix
 
