@@ -35,7 +35,7 @@ def Read_M_and_N():
             tmp=tkinter.StringVar()
             tmp.set("0")
             number_message[i].append(tmp)
-            tkinter.Entry(window1,textvariable=number_message[i][j],width=5).grid(row=i+1+2,column=j+1)
+            tkinter.Entry(window1,textvariable=number_message[i][j],width=10).grid(row=i+1+2,column=j+1)
     tkinter.Button(window1,text="Check",command=Read_Matrix).grid(row=m_Of_Matrix+1+2,column=1)
     
 
@@ -53,7 +53,7 @@ def Read_Matrix():
             number_message[i][j].set(str(Matrix[i][j]))
 
     MatrixCalculaor.display(Matrix)
-    
+
 
 button1=tkinter.Button(text="Check",command=Read_M_and_N)
 button1.grid(row=2,column=2)

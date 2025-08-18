@@ -67,6 +67,8 @@ def main(Matrix,m_Of_Matrix,n_Of_Matrix):
         for j in range(0,i):
             magnification=Matrix[j][pos]/Matrix[i][pos]
             Matrix[j]=simplify(Matrix[i],Matrix[j],magnification=magnification)
+        simplifier=Matrix[i][pos]
+        Matrix[i]=[round(x/simplifier,3) for x in Matrix[i]]
         i=i-1
     display(Matrix)
     return Matrix
