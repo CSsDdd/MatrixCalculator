@@ -38,7 +38,7 @@ def main(Matrix,m_Of_Matrix,n_Of_Matrix):
     non_pivot_element_column_count=0
     display(Matrix)
     i=0
-    while(i<m_Of_Matrix):
+    while(i<m_Of_Matrix and i<n_Of_Matrix-1):
         if(i+non_pivot_element_column_count>=n_Of_Matrix):
             break
         if(Matrix[i][i+non_pivot_element_column_count]==0):
@@ -69,6 +69,15 @@ def main(Matrix,m_Of_Matrix,n_Of_Matrix):
             Matrix[j]=simplify(Matrix[i],Matrix[j],magnification=magnification)
         simplifier=Matrix[i][pos]
         Matrix[i]=[round(x/simplifier,3) for x in Matrix[i]]
+        
+        
+        
+        
+        
+        
+        
+        
+        Matrix[i]=[0 for x in Matrix[i] if (x<1e-10 and x>-1e-10)]
         i=i-1
     display(Matrix)
     return Matrix
